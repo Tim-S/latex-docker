@@ -40,6 +40,12 @@ cd example
 ```
 Use `dockercmd.sh` to execute any command you like inside the container. `WORKDIRs` match, mounted to `/data` inside container.
 
+# Use Makefile (see example/Makefile):
+sudo make example.pdf
+
+# Override Variable DOCUMENT from command line with:
+sudo make -e DOCUMENT=anotherExample
+
 Why should I use this container?
 -----
 

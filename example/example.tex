@@ -2,6 +2,9 @@
 \documentclass{article}
 \usepackage{times}
 
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{references.bib} 
+
 \begin{document}
 
 
@@ -17,7 +20,7 @@ Abstract of this document, remember it's \LaTeX{} source.
 \end{abstract}
 
 \section{First}
-Cite is used like this \cite{test01}.
+Cite is used like this \cite{small}.
 
 \section{Second}
 Second \LaTeX{}.
@@ -25,12 +28,4 @@ Second \LaTeX{}.
 \subsection{Third}
 Emph \emph{Test}.
 
-\begin{thebibliography}{9}
-	\bibitem{test01}
-	  Lalala,
-	  \emph{\LaTeX: blabla}.
-	  Test, Test,
-	  1st Edition,
-	  2001.
-\end{thebibliography}
 \end{document}
