@@ -4,11 +4,14 @@ ifndef PDFVIEWER
 	PDFVIEWER=qpdfview
 endif
 
-CONTAINER=../latexdockercmd.sh /bin/sh -c
+DOCUMENT=example
+
+PWD=$(shell pwd)
+CONTAINER=docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(PWD)":/data blang/latex /bin/sh -c
 PDFLATEX_BIN=pdflatex
 PDFLATEX_OPTS=-shell-escape -halt-on-error
 BIBTEX_BIN=bibtex
-DOCUMENT=example
+
 
 .PHONY: all debug debugcmd clean clean-src clean-pdf show
 

@@ -1,4 +1,4 @@
-NS = blang
+NS = schneidertim
 REPO = latex 
 NAME = latex 
 VOLUMES = -v $PWD:/data

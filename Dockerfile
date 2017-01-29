@@ -1,11 +1,9 @@
-FROM ubuntu:xenial
-MAINTAINER Benedikt Lang <mail@blang.io>
+FROM blang/latex
+MAINTAINER Tim Schneider
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -q
-RUN apt-get install -qy texlive-full 
-RUN apt-get install -qy python-pygments 
-RUN apt-get install -qy gnuplot
+RUN apt-get install -qy biber
 
 WORKDIR /data
 VOLUME ["/data"]
