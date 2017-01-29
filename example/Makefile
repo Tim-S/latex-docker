@@ -7,10 +7,10 @@ endif
 DOCUMENT=example
 
 PWD=$(shell pwd)
-CONTAINER=docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(PWD)":/data blang/latex /bin/sh -c
+CONTAINER=docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(PWD)":/data schneidertim/latex /bin/sh -c
 PDFLATEX_BIN=pdflatex
 PDFLATEX_OPTS=-shell-escape -halt-on-error
-BIBTEX_BIN=bibtex
+BIBTEX_BIN=biber
 
 
 .PHONY: all debug debugcmd clean clean-src clean-pdf show
@@ -34,7 +34,8 @@ clean: clean-src clean-pdf
 
 clean-src:
 	rm -f $(DOCUMENT).aux $(DOCUMENT).log $(DOCUMENT).out $(DOCUMENT).toc $(DOCUMENT).lot $(DOCUMENT).glg $(DOCUMENT).glo $(DOCUMENT).gls $(DOCUMENT).ist $(DOCUMENT).lof \
-		$(DOCUMENT).nav $(DOCUMENT).out $(DOCUMENT).snm $(DOCUMENT).toc $(DOCUMENT).vrb $(DOCUMENT).acn $(DOCUMENT).acr $(DOCUMENT).alg $(DOCUMENT).bbl $(DOCUMENT).blg $(DOCUMENT)-blx.bib $(DOCUMENT).dvi $(DOCUMENT).lol $(DOCUMENT).pyg $(DOCUMENT).run.xml $(DOCUMENT).glsdefs
+		$(DOCUMENT).nav $(DOCUMENT).out $(DOCUMENT).snm $(DOCUMENT).toc $(DOCUMENT).vrb $(DOCUMENT).acn $(DOCUMENT).acr $(DOCUMENT).alg $(DOCUMENT).bbl $(DOCUMENT).blg \
+		$(DOCUMENT)-blx.bib $(DOCUMENT).dvi $(DOCUMENT).lol $(DOCUMENT).pyg $(DOCUMENT).run.xml $(DOCUMENT).glsdefs $(DOCUMENT).bcf
 
 clean-pdf:
 	rm -f $(DOCUMENT).pdf $(DOCUMENT).pdf
